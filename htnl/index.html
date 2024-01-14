@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 10px; /* Agregado para dar espacio alrededor del contenido */
+            background: black url('fondo.jpg') no-repeat center center fixed;
+            background-size: 70%; /* Ajuste al 70% del tamaño original */
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden; /* Evita la barra de desplazamiento horizontal */
+            margin-bottom: 60px; /* Añadí un margen en la parte inferior para evitar que el contenido se superponga con la franja */
+        }
+
+        #header {
+            text-align: center;
+            padding: 20px;
+            font-family: 'Pacifico', cursive;
+            font-size: 1.05em; /* Tamaño del texto reducido al 70% */
+            position: relative;
+            z-index: 2; /* Asegura que esté sobre la franja morada */
+            cursor: pointer; /* Agregado para indicar que el encabezado es interactivo */
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Fondo negro con transparencia */
+            z-index: 1; /* Asegura que esté detrás del texto del encabezado y sobre el fondo */
+        }
+
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            max-width: 800px;
+            margin-top: 20px;
+        }
+
+        .image-container {
+            position: relative;
+            margin: 30px 10px 0; /* Ajuste de la propiedad margin */
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+            width: 100px;
+            height: 140px;
+        }
+
+        .image-container:hover {
+            transform: scale(1.1);
+        }
+
+        img.icon {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            opacity: 0.7;
+        }
+
+        .image-description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 3px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .image-container:hover .image-description {
+            opacity: 1;
+        }
+
+        .purple-bar {
+            background-color: #800080; /* Color morado, puedes ajustar este valor según tus preferencias */
+            width: 100%;
+            height: 10vh; /* Altura de la franja morada en viewport height (vh) */
+            position: fixed;
+            bottom: 0;
+            z-index: 1; /* Asegura que esté detrás del contenido del encabezado y sobre el fondo */
+        }
+
+        .purple-bar img {
+            max-width: 15%; /* Ajusta el tamaño de la imagen al 15% */
+            height: auto;
+            border-radius: 10px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .page-sign {
+            position: fixed;
+            bottom: 80px; /* Ajuste un poco más abajo */
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            border-bottom: 1px solid #fff; /* Subrayado */
+            font-size: 0.8em; /* Letra más pequeña */
+            font-family: 'cursive'; /* Cambio de tipo de letra a cursive */
+            z-index: 2; /* Asegura que esté sobre la franja morada y detrás de la imagen del encabezado */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <div class="header-overlay"></div>
+        <h1>El Emblemático Árbol de las Manitas Toluca</h1>
+    </div>
+
+    <div id="gallery">
+        <!-- Agrega tus imágenes con enlaces aquí -->
+        <div class="image-container">
+            <a href="Link/links.html">
+                <img class="icon" src="icono1.png" alt="Icono 1">
+                <div class="image-description">Links</div>
+            </a>
+        </div>
+        <div class="image-container">
+            <a href="Foto/foto-ensayo.html">
+                <img class="icon" src="icono2.png" alt="Icono 2">
+                <div class="image-description">Fotoensayo</div>
+            </a>
+        </div>
+        <!-- Agrega más imágenes según sea necesario -->
+    </div>
+
+    <a class="page-sign" href="Sobre/sobre-la-pagina.html">Sobre la página</a>
+
+    <div class="purple-bar">
+        <img src="logo.png" alt="Logo">
+    </div>
+
+</body>
+</html>
